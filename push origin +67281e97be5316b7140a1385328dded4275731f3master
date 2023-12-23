@@ -1,0 +1,47 @@
+[33mcommit 67281e97be5316b7140a1385328dded4275731f3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: bagususwanto <bagoes.1933@gmail.com>
+Date:   Sat Dec 23 21:53:38 2023 +0700
+
+    Menambahkan halaman konfirmasi kehadiran,RSVP dan Footer
+
+[33mcommit 8b9158cc4226183ccaddbfa729b9873477d933ab[m
+Author: bagususwanto <bagoes.1933@gmail.com>
+Date:   Sat Dec 23 19:29:21 2023 +0700
+
+    Mengubah gambar galeri foto di semua responsive menjadi 3 kolom
+
+[33mcommit d05ef50f78dca166062b872c1d568a477d6d3c19[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: bagususwanto <bagoes.1933@gmail.com>
+Date:   Mon Dec 18 00:03:17 2023 +0700
+
+    Menambahkan menu story dan gallery serta beberapa perbaikan di responsive.
+
+[33mcommit 01885da463347fef30f548ce06d688a3796c3c97[m
+Author: bagususwanto <bagoes.1933@gmail.com>
+Date:   Sat Dec 16 21:42:55 2023 +0700
+
+    Membuat halaman Info dan beberapa perbaikan
+
+[33mcommit 9a94040c6afebed006c802b778f55a458c70e5aa[m
+Author: bagususwanto <bagoes.1933@gmail.com>
+Date:   Sat Dec 16 19:17:42 2023 +0700
+
+    Membuat navbar dan menambahkan tampilan menu home
+
+[33mcommit ee29506553431075c9d2d18cbd820729927ef56e[m
+Author: bagususwanto <bagoes.1933@gmail.com>
+Date:   Sat Dec 16 13:19:04 2023 +0700
+
+    Memperbaiki responsive di mobile phone
+
+[33mcommit cbd19bf7e588c189123f3deab3b6abecd11c0a8d[m
+Author: bagususwanto <bagoes.1933@gmail.com>
+Date:   Sat Dec 16 12:51:42 2023 +0700
+
+    Menambahkan form nama tamu undangan
+
+[33mcommit 6e2d293bffad0e9fdb77aa6ec99d5939895033cb[m
+Author: bagususwanto <bagoes.1933@gmail.com>
+Date:   Sat Dec 16 11:43:49 2023 +0700
+
+    Membuat web wedding invitation
