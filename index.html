@@ -34,7 +34,7 @@ align-items-center text-white">
             <div class="simply-countdown"></div>
             <div class="form-control mt-4">
                 <p class="mt-4">Kepada Yth.Bpk/Ibu/Saudara/I</p>
-                <p>Diki Ferdian</p>
+                <p class="guest-name">Nama Guest</p>
                 <p>Di Tempat</p>
             </div>
             <a href="#home" class="btn btn-lg mt-4" onclick="enableScroll()">Lihat Undangan</a>
@@ -116,6 +116,10 @@ align-items-center text-white">
                     <h2>Informasi Acara</h2>
                     <p class="alamat">Alamat: Grahar Mekar Wangi <br>JL. RD Rangga Kencana No.1A, Mekarwangi, Kec.
                         Bojongloa Kidul, Kota Bandung</p>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d507263.70757055294!2d107.0392711!3d-6.647203!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e8ebdd786acb%3A0xa5f1d5fcd0e3a728!2sGraha%20Mekar%20Wangi!5e0!3m2!1sid!2sid!4v1703474352332!5m2!1sid!2sid"
+                        width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                     <a href="https://maps.app.goo.gl/2e1U9s4Sn56v6u2K9" target="_blank"
                         class="btn btn-sm btn-light my-3">Klik untuk membuka peta</a>
                     <p class="description">Diharapkan untuk tidak salah alamat, Manakala tiba di tujuan namun tidak ada
@@ -345,6 +349,31 @@ align-items-center text-white">
                     <button class="btn btn-primary">Kirim</button>
                 </div>
             </form>
+
+            <div class="row justify-content-center">
+                <div class="col-md-6 mt-5">
+                    <div id="disqus_thread"></div>
+                    <script>
+                        /**
+                        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+                        /*
+                        var disqus_config = function () {
+                        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                        };
+                        */
+                        (function () { // DON'T EDIT BELOW THIS LINE
+                            var d = document, s = d.createElement('script');
+                            s.src = 'https://my-wedding-gxdhgzbtxp.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments
+                            powered by Disqus.</a></noscript>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -373,10 +402,12 @@ align-items-center text-white">
                         </li>
                         <li class="list-group-item">
                             <div class="fw-bold">DANA</div>
+                            <span>BAGUS</span>
                             <img src="img/QR1.jpeg" alt="" class="img-thumbnail" width="400">
                         </li>
                         <li class="list-group-item">
                             <div class="fw-bold">DANA</div>
+                            <span>MIRA</span>
                             <img src="img/QR1.jpeg" alt="" class="img-thumbnail" width="400">
                         </li>
                     </ul>
@@ -406,7 +437,14 @@ align-items-center text-white">
         </div>
     </footer>
 
-
+    <div id="audio-container">
+        <audio id="song" loop>
+            <source src="audio/Virgoun   Surat Cinta Untuk Starla.mp3">
+        </audio>
+        <div class="audio-icon-wrapper" style="display: none;">
+            <i class="bi bi-disc"></i>
+        </div>
+    </div>
 
 
 
@@ -453,6 +491,10 @@ align-items-center text-white">
 
     <script>
         const rootElement = document.querySelector(":root");
+        const audioIconWrapper = document.querySelector('.audio-icon-wrapper');
+        const song = document.querySelector('#song');
+        const audioIcon = document.querySelector('.audio-icon-wrapper i');
+        let isPlaying = false;
 
         function disableScroll() {
             scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -469,12 +511,33 @@ align-items-center text-white">
         function enableScroll() {
             window.onscroll = function () { }
             rootElement.style.scrollBehavior = 'smooth';
-            localStorage.setItem('opened', 'true');
+            // localStorage.setItem('opened', 'true');
+            playAudio()
         }
 
-        if (!localStorage.getItem('opened')) {
-            disableScroll();
+        function playAudio() {
+            // song.volume = 0.1;
+            audioIconWrapper.style.display = 'flex'
+            song.play();
+            isPlaying = true;
         }
+
+        audioIconWrapper.onclick = function () {
+            if (isPlaying) {
+                song.pause();
+                audioIcon.classList.remove('bi-disc');
+                audioIcon.classList.add('bi-pause-circle');
+            } else {
+                song.play();
+                audioIcon.classList.add('bi-disc');
+                audioIcon.classList.remove('bi-pause-circle');
+            }
+            isPlaying = !isPlaying;
+        }
+
+        // // if (!localStorage.getItem('opened')) {
+        disableScroll();
+        // }
     </script>
 
 
@@ -494,6 +557,17 @@ align-items-center text-white">
                     })
             });
         });
+    </script>
+
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const nama = urlParams.get('nama') || 'Lorem';
+
+        const namaGuest = document.querySelector('.guest-name');
+        namaGuest.innerText = nama;
+
+        document.querySelector('#nama').value = nama;
     </script>
 
 </body>
